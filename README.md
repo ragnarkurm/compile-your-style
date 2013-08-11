@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Compile your Style
 ====================
 
@@ -14,3 +15,9 @@ Contact
 --------------------
 Ragnar Kurm
 ragnar.kurm@gmail.com
+=======
+compilestyle
+============
+
+Compile SASS project to CSS layouts
+>>>>>>> 5921762fb506f3506005cfb257670e996e5f66b6
