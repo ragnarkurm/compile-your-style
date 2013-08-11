@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Compile your Style
 ====================
 
@@ -13,11 +12,6 @@ https://github.com/ragnarkurm/compilestyle/wiki
 
 Contact
 --------------------
+
 Ragnar Kurm
 ragnar.kurm@gmail.com
-=======
-compilestyle
-============
-
-Compile SASS project to CSS layouts
->>>>>>> 5921762fb506f3506005cfb257670e996e5f66b6
