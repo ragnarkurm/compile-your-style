@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ $# -ne 1 ]; then
+	echo "Usage: $0 <file>"
+	exit
+else
+	img="$1"
+fi
+
+if [ ! -f "$img" ]; then
+	echo "$img: Not a file"
+	exit
+fi
+
+label=`echo "$img" | tr 'a-z-' 'A-Z_' | sed 's/\.[A-Z]*$//'`
+identify -format "\$WIDTH_$label: %wpx" "$img"
+identify -format "\$HEIGHT_$label: %hpx" "$img"

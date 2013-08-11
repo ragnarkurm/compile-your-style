@@ -1,0 +1,19 @@
+@mixin rounded($ROUNDNESS: $SP4)
+  border-radius: $ROUNDNESS
+  -webkit-border-radius: $ROUNDNESS
+  -moz-border-radius: $ROUNDNESS
+  -o-border-radius: $ROUNDNESS
+  -khtml-border-radius: $ROUNDNESS
+
+@mixin monospace
+  font-family: Courier, monospace
+
+@mixin clearfix
+  display: block
+  clear: both
+  height: 0
+  visibility: hidden
+  font-size: 0
+  line-height: 0
+  content: "."
+

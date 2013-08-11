@@ -1,0 +1,51 @@
+// assign environment value LAYOUT to sass variable LAYOUT
+$LAYOUT: env(LAYOUT)
+
+// before conditionals we need to assign default values to these variables
+$WIDTH_REGION_HEADER: 0
+$WIDTH_REGION_SIDEBAR: 0
+$WIDTH_REGION_CONTENT: 0
+$WIDTH_REGION_FOOTER: 0
+$SP1: 0 // default spacing 1/1
+$SP2: 0 // default spacing 1/2
+$SP4: 0 // default spacing 1/4
+
+// now do assignments for different layouts
+
+@if $LAYOUT == "global"
+
+@if $LAYOUT == "my-alpha-default"
+
+@if $LAYOUT == "my-alpha-default-narrow"
+
+  $WIDTH_REGION_HEADER: 700px
+  $WIDTH_REGION_SIDEBAR: 100px
+  $WIDTH_REGION_CONTENT: 580px
+  $WIDTH_REGION_FOOTER: 700px
+
+  $SP1: 16px // 1/1
+  $SP2:  8px // 1/2
+  $SP4:  4px // 1/4
+
+@if $LAYOUT == "my-alpha-default-normal"
+
+  $WIDTH_REGION_HEADER: 940px
+  $WIDTH_REGION_SIDEBAR: 140px
+  $WIDTH_REGION_CONTENT: 780px
+  $WIDTH_REGION_FOOTER: 940px
+
+  $SP1: 24px // 1/1
+  $SP2: 12px // 1/2
+  $SP4:  6px // 1/4
+
+@if $LAYOUT == "my-alpha-default-wide"
+
+  $WIDTH_REGION_HEADER: 1180px
+  $WIDTH_REGION_SIDEBAR: 180px
+  $WIDTH_REGION_CONTENT: 980px
+  $WIDTH_REGION_FOOTER: 1180px
+
+  $SP1: 32px // 1/1
+  $SP2: 16px // 1/2
+  $SP4:  8px // 1/4
+
