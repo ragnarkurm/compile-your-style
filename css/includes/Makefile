@@ -1,14 +1,16 @@
-IMAGES = ../../img/dimensions
+IMG_PATH = ../../img/path
+
+IMG_DIMENSIONS = ../../img/dimensions
 
 DST = defs.sass
 
 SRC = $(addsuffix .sass, \
-	img \
+	$(IMG_PATH) \
 	colors \
 	image_styles \
-	$(IMAGES) \
-	mixins \
+	$(IMG_DIMENSIONS) \
 	dimensions \
+	mixins \
 )
 
 $(DST): $(SRC)

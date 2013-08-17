@@ -3,11 +3,15 @@ LOGO = logo.png
 HEADER = header.jpg
 BLOCK = block.jpg
 
-# destination file for concatenated dimensions
-DIM = dimensions.sass
-
 # source file for favicon.ico (must be 16x16 ?)
 ICO = favicon.png
+
+# provide image directory path for sass
+# $IMG: /sites/www.example.com/themes/mytheme/img
+IMG_PATH = path.sass
+
+# destination file for concatenated dimensions
+IMG_DIMENSIONS = dimensions.sass
 
 # list of destination png files
 PNG = \
@@ -30,7 +34,7 @@ SASS = \
 	$(patsubst %.jpg, %.sass, $(JPG))
 
 # default make target
-all: favicon.ico $(DIM)
+all: favicon.ico $(IMG_DIMENSIONS) $(IMG_PATH)
 
 #
 # section of custom conversion rules
@@ -67,8 +71,13 @@ block-narrow.jpg: $(BLOCK)
 # general rules
 #
 
+$(IMG_PATH): Makefile
+	pwd \
+	| sed -e 's!^.*\(/sites/.*\)$$!$$IMG: \1/!' \
+	> $@
+
 # concatenate individual dimensions to one file
-$(DIM): $(SASS)
+$(IMG_DIMENSIONS): $(SASS)
 	cat $^ > $@
 
 # extract width and height from image and output in sass format for png files
@@ -94,8 +103,10 @@ favicon.ico: favicon.pnm Makefile
 # kill all derived files
 clean:
 	rm -f \
-		$(PNG) \
+		$(IMG_DIMENSIONS) \
+		$(IMG_PATH) \
 		$(JPG) \
+		$(PNG) \
 		$(SASS) \
 		favicon.pnm \
 		favicon.ico
