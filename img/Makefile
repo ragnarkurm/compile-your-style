@@ -73,7 +73,7 @@ block-narrow.jpg: $(BLOCK)
 
 $(IMG_PATH): Makefile
 	pwd \
-	| sed -e 's!^.*\(/sites/.*\)$$!$$IMG: \1/!' \
+	| sed -e 's!^.*\(/sites/.*\)$$!$$IMG: "\1/"!' \
 	> $@
 
 # concatenate individual dimensions to one file
