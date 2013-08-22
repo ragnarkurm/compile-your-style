@@ -8,7 +8,7 @@ Sass files are intended to be edited, added or deleted.
 Image files are intended to be edited, added or deleted.
 
 Further documentation:
-https://github.com/ragnarkurm/compilestyle/wiki
+https://github.com/ragnarkurm/compile-your-style/wiki
 
 Contact
 --------------------
