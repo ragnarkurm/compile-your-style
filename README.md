@@ -10,6 +10,9 @@ Image files are intended to be edited, added or deleted.
 Further documentation:
 https://github.com/ragnarkurm/compile-your-style/wiki
 
+Principles in slideshow:
+http://www.slideshare.net/ragnarkurm/compile-your-style-25500334
+
 Contact
 --------------------
 
