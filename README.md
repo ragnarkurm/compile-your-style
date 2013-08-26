@@ -7,33 +7,36 @@ It's biggest function is to have multiple layouts side-by-side in one file.
 
 Example file of one element:
 
-`@import "includes/defs.sass"`
-
-`@if $LAYOUT == "global"`
-
-`@if $LAYOUT == "alpha-default"`
-
-` #logo`
-
-    display: block
-    background-position: center
-    background-repeat: no-repeat
-@if $LAYOUT == "alpha-default-narrow"
-  #logo
-    width: $WIDTH_LOGO_NARROW
-    height: $HEIGHT_LOGO_NARROW
-    background-image: url($IMG + "logo-narrow.png")
-@if $LAYOUT == "alpha-default-normal"
-  #logo
-    width: $WIDTH_LOGO_NORMAL
-    height: $HEIGHT_LOGO_NORMAL
-    background-image: url($IMG + "logo-normal.png")
-@if $LAYOUT == "alpha-default-wide"
-  #logo
-    width: $WIDTH_LOGO_WIDE
-    height: $HEIGHT_LOGO_WIDE
-    background-image: url($IMG + "logo-wide.png")
-`   
+    @import "includes/defs.sass"
+    
+    @if $LAYOUT == "global"
+    
+    @if $LAYOUT == "alpha-default"
+    
+    #logo
+        display: block
+        background-position: center
+        background-repeat: no-repeat
+        
+    @if $LAYOUT == "alpha-default-narrow"
+    
+    #logo
+        width: $WIDTH_LOGO_NARROW
+        height: $HEIGHT_LOGO_NARROW
+        background-image: url($IMG + "logo-narrow.png")
+        
+    @if $LAYOUT == "alpha-default-normal"
+    
+    #logo
+        width: $WIDTH_LOGO_NORMAL
+        height: $HEIGHT_LOGO_NORMAL
+        background-image: url($IMG + "logo-normal.png")
+        
+    @if $LAYOUT == "alpha-default-wide"
+    #logo
+        width: $WIDTH_LOGO_WIDE
+        height: $HEIGHT_LOGO_WIDE
+        background-image: url($IMG + "logo-wide.png")
 
 
 Further documentation:
