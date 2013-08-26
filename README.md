@@ -6,12 +6,12 @@ This is just piece of clay to be formed according to your project.
 It's biggest function is to have multiple layouts side-by-side in one file.
 
 Example file of one element:
-`
-@import "includes/defs.sass"
-@if $LAYOUT == "global"
-@if $LAYOUT == "alpha-default"
-  #logo
-    display: block
+
+`@import "includes/defs.sass"`
+`@if $LAYOUT == "global"`
+`@if $LAYOUT == "alpha-default"`
+` #logo`
+`    display: block`
     background-position: center
     background-repeat: no-repeat
 @if $LAYOUT == "alpha-default-narrow"
