@@ -13,30 +13,31 @@ Example file of one element:
     
     @if $LAYOUT == "alpha-default"
     
-    #logo
-        display: block
-        background-position: center
-        background-repeat: no-repeat
+        #logo
+            display: block
+            background-position: center
+            background-repeat: no-repeat
         
     @if $LAYOUT == "alpha-default-narrow"
     
-    #logo
-        width: $WIDTH_LOGO_NARROW
-        height: $HEIGHT_LOGO_NARROW
-        background-image: url($IMG + "logo-narrow.png")
+        #logo
+            width: $WIDTH_LOGO_NARROW
+            height: $HEIGHT_LOGO_NARROW
+            background-image: url($IMG + "logo-narrow.png")
         
     @if $LAYOUT == "alpha-default-normal"
     
-    #logo
-        width: $WIDTH_LOGO_NORMAL
-        height: $HEIGHT_LOGO_NORMAL
-        background-image: url($IMG + "logo-normal.png")
+        #logo
+            width: $WIDTH_LOGO_NORMAL
+            height: $HEIGHT_LOGO_NORMAL
+            background-image: url($IMG + "logo-normal.png")
         
     @if $LAYOUT == "alpha-default-wide"
-    #logo
-        width: $WIDTH_LOGO_WIDE
-        height: $HEIGHT_LOGO_WIDE
-        background-image: url($IMG + "logo-wide.png")
+    
+        #logo
+            width: $WIDTH_LOGO_WIDE
+            height: $HEIGHT_LOGO_WIDE
+            background-image: url($IMG + "logo-wide.png")
 
 
 Further documentation:
