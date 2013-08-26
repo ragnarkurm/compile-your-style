@@ -15,8 +15,7 @@ Example file of one element:
 
 ` #logo`
 
-`    display: block`
-
+    display: block
     background-position: center
     background-repeat: no-repeat
 @if $LAYOUT == "alpha-default-narrow"
