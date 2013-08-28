@@ -71,6 +71,7 @@ block-narrow.jpg: $(BLOCK)
 # general rules
 #
 
+# Drupal specific
 $(IMG_PATH): Makefile
 	pwd \
 	| sed -e 's!^.*\(/sites/.*\)$$!$$IMG: "\1/"!' \
