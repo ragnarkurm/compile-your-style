@@ -72,9 +72,15 @@ block-narrow.jpg: $(BLOCK)
 #
 
 # Drupal specific
+# cut DocRoot,
+# retain URL path
+# make sure it ends in slash /
 $(IMG_PATH): Makefile
 	pwd \
-	| sed -e 's!^.*\(/sites/.*\)$$!$$IMG: "\1/"!' \
+	| sed \
+		-e 's!^.*\(/sites/.*\)$$!\1!' \
+		-e 's!/*$$!/!' \
+		-e 's!^!$$IMG: !' \
 	> $@
 
 # concatenate individual dimensions to one file
