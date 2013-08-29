@@ -15,10 +15,10 @@ include files.mk
 
 LAYOUT_CSS = $(addsuffix .$(LAYOUT).css, \
 	$(ELEMENTS) \
-	$(STRUCTURAL) \
+	$(STRUCTURES) \
 	$(FIELDS) \
 	$(VIEWS) \
-	$(NODE) \
+	$(NODES) \
 	$(PAGES) \
 )
 

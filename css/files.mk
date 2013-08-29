@@ -8,7 +8,7 @@ ELEMENTS = $(addprefix elements/, \
 #	system.messages \
 
 
-STRUCTURAL = $(addprefix structural/, \
+STRUCTURES = $(addprefix structures/, \
 )
 
 #	zones \
@@ -64,7 +64,7 @@ VIEWS = $(addprefix views/, \
 #	products \
 
 
-NODE = $(addprefix node/, \
+NODES = $(addprefix nodes/, \
 )
 
 #	node \
