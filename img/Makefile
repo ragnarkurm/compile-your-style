@@ -75,11 +75,14 @@ block-narrow.jpg: $(BLOCK)
 # cut DocRoot,
 # retain URL path
 # make sure it ends in slash /
+# quote it
+# prepend $IMG:
 $(IMG_PATH): Makefile
 	pwd \
 	| sed \
 		-e 's!^.*\(/sites/.*\)$$!\1!' \
 		-e 's!/*$$!/!' \
+		-e 's!^\(.*\)$$!"\1"!' \
 		-e 's!^!$$IMG: !' \
 	> $@
 
