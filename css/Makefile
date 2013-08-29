@@ -13,14 +13,9 @@ LAYOUTS = \
 
 include files.mk
 
-LAYOUT_CSS = $(addsuffix .$(LAYOUT).css, \
-	$(ELEMENTS) \
-	$(STRUCTURES) \
-	$(FIELDS) \
-	$(VIEWS) \
-	$(NODES) \
-	$(PAGES) \
-)
+SOURCES = $(addsuffix .sass, $(PIECES))
+
+LAYOUT_CSS = $(addsuffix .$(LAYOUT).css, $(PIECES))
 
 all:
 	make -C $(INCLUDES)
@@ -31,19 +26,19 @@ all:
 		make $$layout.css -e LAYOUT=$$layout || exit 1 ; \
 	done
 
-$(TARGET): $(LAYOUT_CSS)
-	@echo "Assembling $@"
-	@cat $^ > $@
-
-$(LAYOUT_CSS): %.$(LAYOUT).css: %.sass
-	@echo "Compiling $*"
+# intermediate explicit sass-to-css step is skipped
+# so depencency tree is slightly broken
+# but we get compilation in one shot with "sass --update"
+$(TARGET): $(SOURCES)
+	@echo "Compiling $?"
 	@LAYOUT=$(LAYOUT) \
 	sass \
 		--unix-newlines \
 		--style compressed \
 		--require env.rb \
-		< $< \
-		> $@
+		`./updates $(LAYOUT) $?`
+	@echo "Assembling $@"
+	@cat $(LAYOUT_CSS) > $@
 
 $(LAYOUT_CSS): $(DEFS) Makefile
 

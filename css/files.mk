@@ -82,3 +82,12 @@ PAGES = $(addprefix pages/, \
 #	node-add \
 
 
+PIECES = \
+	$(ELEMENTS) \
+	$(STRUCTURES) \
+	$(FIELDS) \
+	$(VIEWS) \
+	$(NODES) \
+	$(PAGES)
+
+
