@@ -41,7 +41,7 @@ $(LAYOUT_CSS): %.$(LAYOUT).css: %.sass
 	sass \
 		--unix-newlines \
 		--style compressed \
-		--require lib/env.rb \
+		--require env.rb \
 		< $< \
 		> $@
 
