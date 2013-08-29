@@ -1,7 +1,7 @@
 ELEMENTS = $(addprefix elements/, \
+	tags \
 )
 
-#	tags \
 #	\
 #	image \
 #	logo \
