@@ -5,6 +5,7 @@ IMG_DIMENSIONS = ../../img/dimensions
 DST = defs.sass
 
 SRC = $(addsuffix .sass, \
+	layout \
 	$(IMG_PATH) \
 	colors \
 	image_styles \
