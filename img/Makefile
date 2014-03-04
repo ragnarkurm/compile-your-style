@@ -6,12 +6,14 @@ BLOCK = block.jpg
 # source file for favicon.ico (must be 16x16 ?)
 ICO = favicon.png
 
-# provide image directory path for sass
-# $IMG: /sites/www.example.com/themes/mytheme/img
-IMG_PATH = path.sass
+# destination file for concatenated image dimensions
+IMG_DIMENSIONS = _images.sass
 
-# destination file for concatenated dimensions
-IMG_DIMENSIONS = dimensions.sass
+# where to install images?
+IMG_INSTALL_PATH = ../images
+
+# where to install sass files?
+SASS_INSTALL_PATH = ../sass/variables
 
 # list of destination png files
 PNG = \
@@ -34,7 +36,7 @@ SASS = \
 	$(patsubst %.jpg, %.sass, $(JPG))
 
 # default make target
-all: favicon.ico $(IMG_DIMENSIONS) $(IMG_PATH)
+all: favicon.ico $(IMG_DIMENSIONS)
 
 #
 # section of custom conversion rules
@@ -71,20 +73,13 @@ block-narrow.jpg: $(BLOCK)
 # general rules
 #
 
-# Drupal specific
-# cut DocRoot,
-# retain URL path
-# make sure it ends in slash /
-# quote it
-# prepend $IMG:
-$(IMG_PATH): Makefile
-	pwd \
-	| sed \
-		-e 's!^.*\(/sites/.*\)$$!\1!' \
-		-e 's!/*$$!/!' \
-		-e 's!^\(.*\)$$!"\1"!' \
-		-e 's!^!$$IMG: !' \
-	> $@
+install: install_img install_sass
+
+install_img: $(PNG) $(JPG)
+	cp $^ $(IMG_INSTALL_PATH)
+
+install_sass: $(IMG_DIMENSIONS)
+	cp $^ $(SASS_INSTALL_PATH)
 
 # concatenate individual dimensions to one file
 $(IMG_DIMENSIONS): $(SASS)
@@ -114,7 +109,6 @@ favicon.ico: favicon.pnm Makefile
 clean:
 	rm -f \
 		$(IMG_DIMENSIONS) \
-		$(IMG_PATH) \
 		$(JPG) \
 		$(PNG) \
 		$(SASS) \
