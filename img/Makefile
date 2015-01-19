@@ -32,8 +32,8 @@ JPG = \
 
 # list of individual destinations files respective images
 SASS = \
-	$(patsubst %.png, %.sass, $(PNG)) \
-	$(patsubst %.jpg, %.sass, $(JPG))
+	$(patsubst %.png, %.png.sass, $(PNG)) \
+	$(patsubst %.jpg, %.jpg.sass, $(JPG))
 
 # default make target
 all: favicon.ico $(IMG_DIMENSIONS)
@@ -86,11 +86,11 @@ $(IMG_DIMENSIONS): $(SASS)
 	cat $^ > $@
 
 # extract width and height from image and output in sass format for png files
-%.sass: %.png Makefile
+%.png.sass: %.png Makefile
 	./wh $< > $@
 
 # extract width and height from image and output in sass format for jpg files
-%.sass: %.jpg Makefile
+%.jpg.sass: %.jpg Makefile
 	./wh $< > $@
 
 # png and jpg files depend on Makefile
