@@ -15,6 +15,9 @@ IMG_INSTALL_PATH = ../images
 # where to install sass files?
 SASS_INSTALL_PATH = ../sass/variables
 
+# absolute web path to installed images
+IMG_URL_PATH = /sites/default/theme/fancy/img/
+
 # list of destination png files
 PNG = \
 	logo-wide.png \
@@ -83,7 +86,10 @@ install_sass: $(IMG_DIMENSIONS)
 
 # concatenate individual dimensions to one file
 $(IMG_DIMENSIONS): $(SASS)
-	cat $^ > $@
+	# allow override from commandline for production compilation
+	echo '$$IMG: "$(IMG_URL_PATH)" !default' > $@
+	cat $^ >> $@
+
 
 # extract width and height from image and output in sass format for png files
 %.png.sass: %.png Makefile
