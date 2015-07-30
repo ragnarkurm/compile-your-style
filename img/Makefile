@@ -16,7 +16,7 @@ IMG_INSTALL_PATH = ../images
 SASS_INSTALL_PATH = ../sass/variables
 
 # absolute web path to installed images
-IMG_URL_PATH = /sites/default/themes/fancy/img/
+IMG_URL_PATH = /sites/default/themes/fancy/images/
 
 # list of destination png files
 PNG = \
