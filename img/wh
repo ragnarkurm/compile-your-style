@@ -13,5 +13,5 @@ if [ ! -f "$img" ]; then
 fi
 
 label=`echo "$img" | tr 'a-z-' 'A-Z_' | sed 's/\.[A-Z]*$//'`
-identify -format "\$WIDTH_$label: %wpx" "$img"
-identify -format "\$HEIGHT_$label: %hpx" "$img"
+identify -format "\$WIDTH_$label: %wpx\n" "$img"
+identify -format "\$HEIGHT_$label: %hpx\n" "$img"
