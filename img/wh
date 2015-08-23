@@ -12,6 +12,6 @@ if [ ! -f "$img" ]; then
 	exit
 fi
 
-label=`echo "$img" | tr 'a-z-' 'A-Z_' | sed 's/\.[A-Z]*$//'`
+label=`basename "$img" | tr 'a-z-' 'A-Z_' | sed 's/\.[A-Z]*$//'`
 identify -format "\$WIDTH_$label: %wpx\n" "$img"
 identify -format "\$HEIGHT_$label: %hpx\n" "$img"
