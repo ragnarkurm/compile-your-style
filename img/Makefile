@@ -43,7 +43,8 @@ $(IMAGES): Makefile
 
 # kill all derived files
 clean:
-	rm -f tmp/* dst/*
+	rm -rf tmp dst
+	mkdir tmp dst
 
 #
 #		sass
